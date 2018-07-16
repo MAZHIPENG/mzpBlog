@@ -5,14 +5,46 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
-
+  
+  
+    
+      
+    
+    
+  <script src="true"></script>
+  <link href="/mzpBlog/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -84,14 +116,14 @@
 <meta name="description" content="1.标记-清除算法最基础的收集算法。分为两个阶段：标记出所有需要回收的对象，标记完成后统一回收所有被标记的对象。不足：效率，空间，标记清除后会产生大量不连续的内存碎片。 2.复制算法解决效率问题。将可用的内存按容量分为大小相等的两块，每次只使用一块。当一块用完了，将还存活的对象复制到另一块，然后再把已使用过的内存空间一次清理掉。 3.标记整理算法复制算法有较多复制操作，效率问题。根据老年代的特点，">
 <meta name="keywords" content="JAVA,JVM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JVM内存分配">
+<meta property="og:title" content="垃圾收集算法">
 <meta property="og:url" content="https://mazhipeng.github.io/mzpBlog/2017/07/20/垃圾收集算法/index.html">
 <meta property="og:site_name" content="mzp">
 <meta property="og:description" content="1.标记-清除算法最基础的收集算法。分为两个阶段：标记出所有需要回收的对象，标记完成后统一回收所有被标记的对象。不足：效率，空间，标记清除后会产生大量不连续的内存碎片。 2.复制算法解决效率问题。将可用的内存按容量分为大小相等的两块，每次只使用一块。当一块用完了，将还存活的对象复制到另一块，然后再把已使用过的内存空间一次清理掉。 3.标记整理算法复制算法有较多复制操作，效率问题。根据老年代的特点，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-16T03:24:53.541Z">
+<meta property="og:updated_time" content="2018-07-16T15:09:47.981Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JVM内存分配">
+<meta name="twitter:title" content="垃圾收集算法">
 <meta name="twitter:description" content="1.标记-清除算法最基础的收集算法。分为两个阶段：标记出所有需要回收的对象，标记完成后统一回收所有被标记的对象。不足：效率，空间，标记清除后会产生大量不连续的内存碎片。 2.复制算法解决效率问题。将可用的内存按容量分为大小相等的两块，每次只使用一块。当一块用完了，将还存活的对象复制到另一块，然后再把已使用过的内存空间一次清理掉。 3.标记整理算法复制算法有较多复制操作，效率问题。根据老年代的特点，">
 
 
@@ -100,7 +132,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/mzpBlog/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -143,7 +175,7 @@
 
 
 
-  <title>JVM内存分配 | mzp</title>
+  <title>垃圾收集算法 | mzp</title>
   
 
 
@@ -361,7 +393,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JVM内存分配</h1>
+          <h1 class="post-title" itemprop="name headline">垃圾收集算法</h1>
         
 
         <div class="post-meta">
@@ -413,7 +445,7 @@
 
           
           
-             <span id="/mzpBlog/2017/07/20/垃圾收集算法/" class="leancloud_visitors" data-flag-title="JVM内存分配">
+             <span id="/mzpBlog/2017/07/20/垃圾收集算法/" class="leancloud_visitors" data-flag-title="垃圾收集算法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -485,12 +517,7 @@
 
   
 </div>
-<div>
-      
-        
 
-      
-</div>
     
 
     
@@ -602,11 +629,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODEwNS8xNDYzNQ=="></div>
-    </div>
 
   
 
@@ -884,13 +906,6 @@
   
   
 
-
-  <script type="text/javascript" src="/mzpBlog/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/mzpBlog/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
   
   <script type="text/javascript" src="/mzpBlog/js/src/scrollspy.js?v=5.1.4"></script>
 <script type="text/javascript" src="/mzpBlog/js/src/post-details.js?v=5.1.4"></script>
@@ -924,17 +939,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 
@@ -1410,5 +1414,5 @@
 
   
 
-<script src="/mzpBlog/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/mzpBlog/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":true},"log":false});</script></body>
+<script src="/mzpBlog/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/mzpBlog/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":false},"log":false});</script></body>
 </html>
