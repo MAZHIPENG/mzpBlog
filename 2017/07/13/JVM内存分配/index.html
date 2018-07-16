@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/myBlog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/mzpBlog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -48,21 +48,21 @@
 
 
 
-<link href="/myBlog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/mzpBlog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/myBlog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/myBlog/images/apple-touch-icon-next.png?v=5.1.4">
+<link href="/mzpBlog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/myBlog/images/m.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/mzpBlog/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/myBlog/images/m.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/mzpBlog/images/m.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/myBlog/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/mzpBlog/images/m.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/mzpBlog/images/logo.svg?v=5.1.4" color="#222">
 
 
 
@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="/myBlog/atom.xml" title="Meng" type="application/atom+xml" />
+  <link rel="alternate" href="/mzpBlog/atom.xml" title="mzp" type="application/atom+xml" />
 
 
 
@@ -85,11 +85,11 @@
 <meta name="keywords" content="JAVA,JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM内存分配">
-<meta property="og:url" content="https://zhangzhang18.github.io/myBlog/2017/07/13/JVM内存分配/index.html">
-<meta property="og:site_name" content="Meng">
+<meta property="og:url" content="https://mazhipeng.github.io/mzpBlog/2017/07/13/JVM内存分配/index.html">
+<meta property="og:site_name" content="mzp">
 <meta property="og:description" content="1.程序计数器（PCR）可以看做当前线程所执行的字节码的行号指示器。为了线程切换后能够恢复到正确执行位置，每条线程都需要独立的程序计数器。 2.栈（JVM stack）线程私有，生命周期与线程相同。描述的事Java方法执行的内存模型：每个方法执行的同时都会创建一个栈帧用于存储局部变量表，操作数栈，动态链接方法出口。每个方法执行到完成，对应着一个栈帧在虚拟机栈中入栈到出栈的过程。 3.本地方法栈（N">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-16T03:24:53.545Z">
+<meta property="og:updated_time" content="2018-07-16T03:24:53.544Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM内存分配">
 <meta name="twitter:description" content="1.程序计数器（PCR）可以看做当前线程所执行的字节码的行号指示器。为了线程切换后能够恢复到正确执行位置，每条线程都需要独立的程序计数器。 2.栈（JVM stack）线程私有，生命周期与线程相同。描述的事Java方法执行的内存模型：每个方法执行的同时都会创建一个栈帧用于存储局部变量表，操作数栈，动态链接方法出口。每个方法执行到完成，对应着一个栈帧在虚拟机栈中入栈到出栈的过程。 3.本地方法栈（N">
@@ -99,8 +99,8 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/myBlog/',
-    scheme: 'Mist',
+    root: '/mzpBlog/',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://zhangzhang18.github.io/myBlog/2017/07/13/JVM内存分配/"/>
+  <link rel="canonical" href="https://mazhipeng.github.io/mzpBlog/2017/07/13/JVM内存分配/"/>
 
 
 
@@ -143,7 +143,7 @@
 
 
 
-  <title>JVM内存分配 | Meng</title>
+  <title>JVM内存分配 | mzp</title>
   
 
 
@@ -181,9 +181,9 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/myBlog/"  class="brand" rel="start">
+      <a href="/mzpBlog/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Meng</span>
+        <span class="site-title">mzp</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -209,7 +209,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/myBlog/" rel="section">
+          <a href="/mzpBlog/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -219,7 +219,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/myBlog/tags/" rel="section">
+          <a href="/mzpBlog/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -229,7 +229,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/myBlog/categories/" rel="section">
+          <a href="/mzpBlog/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -239,7 +239,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/myBlog/archives/" rel="section">
+          <a href="/mzpBlog/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -249,7 +249,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/myBlog/about" rel="section">
+          <a href="/mzpBlog/about" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
@@ -259,7 +259,7 @@
       
         
         <li class="menu-item menu-item-lifenote">
-          <a href="/myBlog/lifenote" rel="section">
+          <a href="/mzpBlog/lifenote" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
             
@@ -269,7 +269,7 @@
       
         
         <li class="menu-item menu-item-image">
-          <a href="/myBlog/photo" rel="section">
+          <a href="/mzpBlog/photo" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-image"></i> <br />
             
@@ -344,16 +344,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangzhang18.github.io/myBlog/myBlog/2017/07/13/JVM内存分配/">
+    <link itemprop="mainEntityOfPage" href="https://mazhipeng.github.io/mzpBlog/mzpBlog/2017/07/13/JVM内存分配/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="meng">
+      <meta itemprop="name" content="mazhipeng">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/myBlog/images/header.jpg">
+      <meta itemprop="image" content="/mzpBlog/images/header.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Meng">
+      <meta itemprop="name" content="mzp">
     </span>
 
     
@@ -396,7 +396,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/myBlog/categories/NoteBook/" itemprop="url" rel="index">
+                  <a href="/mzpBlog/categories/NoteBook/" itemprop="url" rel="index">
                     <span itemprop="name">NoteBook</span>
                   </a>
                 </span>
@@ -413,7 +413,7 @@
 
           
           
-             <span id="/myBlog/2017/07/13/JVM内存分配/" class="leancloud_visitors" data-flag-title="JVM内存分配">
+             <span id="/mzpBlog/2017/07/13/JVM内存分配/" class="leancloud_visitors" data-flag-title="JVM内存分配">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -504,9 +504,9 @@
       
         <div class="post-tags">
           
-            <a href="/myBlog/tags/JAVA/" <i class="fa fa-tag"></i> JAVA</a>
+            <a href="/mzpBlog/tags/JAVA/" <i class="fa fa-tag"></i> JAVA</a>
           
-            <a href="/myBlog/tags/JVM/" <i class="fa fa-tag"></i> JVM</a>
+            <a href="/mzpBlog/tags/JVM/" <i class="fa fa-tag"></i> JVM</a>
           
         </div>
       
@@ -537,7 +537,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/myBlog/2017/07/20/垃圾收集算法/" rel="prev" title="JVM内存分配">
+              <a href="/mzpBlog/2017/07/20/垃圾收集算法/" rel="prev" title="JVM内存分配">
                 JVM内存分配 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -649,10 +649,10 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/myBlog/images/header.jpg"
-                alt="meng" />
+                src="/mzpBlog/images/header.jpg"
+                alt="mazhipeng" />
             
-              <p class="site-author-name" itemprop="name">meng</p>
+              <p class="site-author-name" itemprop="name">mazhipeng</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -661,7 +661,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/myBlog/archives/">
+                <a href="/mzpBlog/archives/">
               
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
@@ -673,7 +673,7 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/myBlog/categories/index.html">
+                <a href="/mzpBlog/categories/index.html">
                   <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
@@ -684,7 +684,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/myBlog/tags/index.html">
+                <a href="/mzpBlog/tags/index.html">
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -695,7 +695,7 @@
 
           
             <div class="feed-link motion-element">
-              <a href="/myBlog/atom.xml" rel="alternate">
+              <a href="/mzpBlog/atom.xml" rel="alternate">
                 <i class="fa fa-rss"></i>
                 RSS
               </a>
@@ -752,7 +752,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">meng</span>
+  <span class="author" itemprop="copyrightHolder">mazhipeng</span>
 
   
 </div>
@@ -841,62 +841,62 @@
 
   
   
-    <script type="text/javascript" src="/myBlog/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/mzpBlog/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/myBlog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="/mzpBlog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script type="text/javascript" src="/myBlog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="/mzpBlog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
   
-    <script type="text/javascript" src="/myBlog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/mzpBlog/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/myBlog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/mzpBlog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/myBlog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/mzpBlog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
   
   
-    <script type="text/javascript" src="/myBlog/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/mzpBlog/lib/canvas-nest/canvas-nest.min.js"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/myBlog/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/myBlog/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/myBlog/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/myBlog/js/src/post-details.js?v=5.1.4"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/myBlog/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/mzpBlog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/mzpBlog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/mzpBlog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/mzpBlog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/mzpBlog/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -957,7 +957,7 @@
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/myBlog/" + search_path;
+    var path = "/mzpBlog/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
@@ -1406,5 +1406,5 @@
 
   
 
-<script src="/myBlog/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/myBlog/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":true},"log":false});</script></body>
+<script src="/mzpBlog/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/mzpBlog/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":true},"log":false});</script></body>
 </html>
